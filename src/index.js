@@ -2,6 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+class Grid extends React.Component {
+    render() {
+        return (
+            <div>
+            Grid
+            </div>
+        )
+    }
+}
+
 class Main extends React.Component {
     constructor(){
         super();
@@ -21,4 +31,4 @@ class Main extends React.Component {
     }
 }
 
-ReactDOM.render(<h1>Hello world</h1>, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));
