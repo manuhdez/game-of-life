@@ -68,8 +68,8 @@ class Buttons extends React.Component {
                     <button className="btn btn-default" onClick={this.props.seed}>Seed</button>
                     <DropdownButton title="Grid Size" id="size-menu" onSelect={this.handleSelect} >
                         <MenuItem eventKey="1">20x10</MenuItem>
-                        <MenuItem eventKey="1">50x30</MenuItem>
-                        <MenuItem eventKey="1">70x50</MenuItem>
+                        <MenuItem eventKey="2">50x30</MenuItem>
+                        <MenuItem eventKey="3">70x50</MenuItem>
                     </DropdownButton>
                 </ButtonToolbar>
             </div>
@@ -139,6 +139,23 @@ class Main extends React.Component {
             generation: 0
         })
         clearInterval(this.intervalId);
+    }
+
+    gridSize = (size) => {
+        switch(size) {
+            case "1":
+                this.cols = 20;
+                this.rows = 10;
+            break;
+            case "2":
+                this.cols = 50;
+                this.rows = 30;
+            break;
+            default:
+                this.cols = 70;
+                this.rows = 50;
+        }
+        this.clear();
     }
 
     play = () => {
